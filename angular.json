@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "account-balance"
+    }
+  },
+  "defaultProject": "account-balance",
+  "cli": {
+    "analytics": "90d18b56-00c5-40e8-8afb-5ea9fa7bdcca"
+  }
 }

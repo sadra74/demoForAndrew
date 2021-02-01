@@ -1,0 +1,49 @@
+<div class="example-container" *mobxAutorun>
+  <div class="form-container">
+    <form [formGroup]="formGroup" (submit)="submit()">
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label> Credit Card Number
+        </mat-label>
+        <input matInput formControlName="creditCardNumber" required [(ngModel)]="state.ccp.creditCardNumber">
+        <mat-error *ngIf="formGroup.controls.creditCardNumber.touched && formGroup.controls.creditCardNumber.invalid">
+          <span *ngIf="formGroup.controls.creditCardNumber.errors.required">This field is mandatory.</span>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label> Card Holder
+        </mat-label>
+        <input matInput formControlName="cardHolder" required [(ngModel)]="state.ccp.cardHolder">
+        <mat-error *ngIf="formGroup.controls.cardHolder.touched && formGroup.controls.cardHolder.invalid">
+          <span *ngIf="formGroup.controls.cardHolder.errors.required">This field is mandatory.</span>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label> Expiration Date
+        </mat-label>
+        <input matInput type="date" formControlName="expirationDate" [(ngModel)]="state.ccp.expirationDate">
+        <mat-error *ngIf="formGroup.controls.expirationDate.touched && formGroup.controls.expirationDate.invalid">
+          <span>This field is invalid.</span>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label> Security Code
+        </mat-label>
+        <input matInput formControlName="securityCode" [(ngModel)]="state.ccp.securityCode">
+        <mat-error *ngIf="formGroup.controls.securityCode.touched && formGroup.controls.securityCode.invalid">
+          <span>This field is invalid.</span>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label> Amount
+        </mat-label>
+        <input matInput formControlName="amount" type="number" min="1" required [(ngModel)]="state.ccp.amount">
+        <mat-error *ngIf="formGroup.controls.amount.touched && formGroup.controls.amount.invalid">
+          <span>This field is invalid.</span>
+        </mat-error>
+      </mat-form-field>
+
+
+      <button mat-raised-button color="primary" type="submit">Submit</button>
+    </form>
+  </div>
+</div>
